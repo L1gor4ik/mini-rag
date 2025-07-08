@@ -1,4 +1,4 @@
-# 🎯 Mini-RAG (offline demo)
+#  Mini-RAG (offline demo)
 
 Мини-репо, показывающее, как собрать Retrieval-Augmented-Generation **без** внешних сервисов
 
