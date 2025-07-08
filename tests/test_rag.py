@@ -2,7 +2,7 @@ import pandas as pd, pytest
 
 from bert_score import score
 
-from src.rag_pipeline import answer
+from rag_pipeline import answer
 
 
 

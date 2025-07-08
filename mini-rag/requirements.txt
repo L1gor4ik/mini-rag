@@ -1,9 +1,0 @@
-openai>=1.30.0
-python-dotenv
-beautifulsoup4
-requests
-pandas
-sentence-transformers
-chromadb
-bert-score
-pytest
