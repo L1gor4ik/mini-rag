@@ -1,0 +1,31 @@
+# .github/workflows/ci.yml
+name: Test mini-rag
+
+on:            # ← когда запускать
+  push:        # каждый push
+  pull_request:  # и каждый PR
+
+jobs:
+  tests:
+    runs-on: ubuntu-latest          # виртуальная машина
+    strategy:
+      matrix:
+        python-version: ["3.11"]    # можно добавить "3.10", "3.12"
+
+    steps:
+      - name: Check-out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+
+      - name: Install dependencies
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install pytest  # вдруг не оказался в requirements
+
+      - name: Run tests
+        run: pytest -q
