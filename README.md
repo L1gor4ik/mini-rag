@@ -25,3 +25,5 @@ pip install -r requirements.txt
 pytest -q      # 10 тестов на BERTScore (офлайн)
 ```
 ![Demo](docs/screenshot.png)
+
+![tests](https://github.com/L1gor4ik/mini-rag/actions/workflows/ci.yml/badge.svg)
