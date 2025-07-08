@@ -10,3 +10,5 @@ cd mini-rag
 python -m venv venv && . venv/Scripts/activate      # Win
 pip install -r requirements.txt
 pytest -q      # 10 тестов на BERTScore (офлайн)
+
+![Demo](docs/screenshot_5.png)
