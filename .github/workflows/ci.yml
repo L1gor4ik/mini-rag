@@ -7,21 +7,15 @@ on:
 jobs:
   tests:
     runs-on: ubuntu-latest
-
-    # Все команды run будут выполняться внутри mini-rag/mini-rag
-    defaults:
-      run:
-        working-directory: ./mini-rag
-
     strategy:
       matrix:
         python-version: ["3.11"]
 
     steps:
-      - name: Check out repository
+      - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Set up Python ${{ matrix.python-version }}
+      - name: Setup Python ${{ matrix.python-version }}
         uses: actions/setup-python@v5
         with:
           python-version: ${{ matrix.python-version }}
@@ -33,9 +27,7 @@ jobs:
           pip install pytest
 
       - name: Install project (editable)
-        run: |
-          pip install -e .
+        run: pip install -e .
 
       - name: Run tests
-        run: |
-          pytest -q
+        run: pytest -q
